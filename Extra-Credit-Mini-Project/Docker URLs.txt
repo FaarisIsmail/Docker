@@ -1,0 +1,3 @@
+https://hub.docker.com/repository/docker/faarisismail/sentiment-analysis-frontend/general
+https://hub.docker.com/repository/docker/faarisismail/sentiment-analysis-web-app
+https://hub.docker.com/repository/docker/faarisismail/sentiment-analysis-logic
