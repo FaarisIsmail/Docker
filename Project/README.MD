@@ -8,8 +8,8 @@
 * Sonar Qube - https://hub.docker.com/_/sonarqube
 
 # Source Code
-*[Main Application Terminal](./driver/driver.py)
-*[Driver Docker file](./driver/Dockerfile)
+* [Main Application Terminal](./driver/driver.py)
+* [Driver Docker file](./driver/Dockerfile)
 
 # Steps to run images on Kubernetes
 
