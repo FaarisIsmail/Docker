@@ -1,11 +1,11 @@
 # Docker Image URLS
 
-Driver - https://hub.docker.com/repository/docker/faarisismail/driver
-Apache Spark - https://hub.docker.com/r/cloudsuite/spark
-Apache Hadoop - https://hub.docker.com/r/harisekhon/hadoop
-Jupyter Notebook - https://hub.docker.com/r/jupyter/base-notebook
-Sonar Scanner - https://hub.docker.com/r/newtmitch/sonar-scanner
-Sonar Qube - https://hub.docker.com/_/sonarqube
+* Driver - https://hub.docker.com/repository/docker/faarisismail/driver
+* Apache Spark - https://hub.docker.com/r/cloudsuite/spark
+* Apache Hadoop - https://hub.docker.com/r/harisekhon/hadoop
+* Jupyter Notebook - https://hub.docker.com/r/jupyter/base-notebook
+* Sonar Scanner - https://hub.docker.com/r/newtmitch/sonar-scanner
+* Sonar Qube - https://hub.docker.com/_/sonarqube
 
 # Steps to run images on Kubernetes
 
