@@ -26,5 +26,5 @@
    (You want to do this for all 5 containers. Click 'Add Container' after selecting each image path to add a new container)
 8. Hit 'Continue' to be brought to the configuration page
 9. Hit 'Deploy' to deploy your images to Kubernetes Cluster
-* [IMG1](/Images/Screen Shot 2021-10-31 at 11.38.54 PM)
-* [IMG2](/Images/Screen Shot 2021-10-31 at 11.39.22 PM)
+* [IMG1](/Images/Screen Shot 2021-10-31 at 11.38.54 PM.png)
+* [IMG2](/Images/Screen Shot 2021-10-31 at 11.39.22 PM.png)
