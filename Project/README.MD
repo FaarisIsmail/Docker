@@ -7,6 +7,10 @@
 * Sonar Scanner - https://hub.docker.com/r/newtmitch/sonar-scanner
 * Sonar Qube - https://hub.docker.com/_/sonarqube
 
+# Source Code
+[Main Application Terminal] /driver/driver.py
+[Driver Docker file] /driver/Dockerfile
+
 # Steps to run images on Kubernetes
 
 1. Pull all docker images to GCP
