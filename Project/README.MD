@@ -14,7 +14,7 @@ Sonar Qube - https://hub.docker.com/_/sonarqube
 2. Tag all images to Google Cloud Registry path
     (eg. `docker tag [DOCKER_IMAGE] gcr.io/[PROJECT_ID]/[USERNAME]/[DOCKER_IMAGE]`)
 3. Push images to Google Cloud Registery using tag name
-    (eg. `docker push gcr.io/[PROJECT_ID]/[USERNAME]/[DOCKER_IMAGE])
+    (eg. `docker push gcr.io/[PROJECT_ID]/[USERNAME]/[DOCKER_IMAGE]`)
 4. Navigate to 'Kubernetes Engine' in GCP Console
 5. Create a new GKE cluster by clicking 'Create'
 6. After creating the GKE cluster, start the deployment by clicking 'Deploy'
