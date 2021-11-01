@@ -1,4 +1,4 @@
-#Docker Image URLS
+# Docker Image URLS
 
 Driver - https://hub.docker.com/repository/docker/faarisismail/driver
 Apache Spark - https://hub.docker.com/r/cloudsuite/spark
@@ -7,7 +7,7 @@ Jupyter Notebook - https://hub.docker.com/r/jupyter/base-notebook
 Sonar Scanner - https://hub.docker.com/r/newtmitch/sonar-scanner
 Sonar Qube - https://hub.docker.com/_/sonarqube
 
-#Steps to run images on Kubernetes
+# Steps to run images on Kubernetes
 
 1. Pull all docker images to GCP
    (eg. `docker pull [DOCKER_IMAGE]`)
