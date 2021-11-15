@@ -1,4 +1,6 @@
 FROM python
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
+RUN pip install docker
+WORKDIR /app
+COPY . /app
+EXPOSE 5000
 CMD ["python", "driver.py"]
