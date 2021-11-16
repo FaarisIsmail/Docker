@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadoop-datanode
+  labels:
+    app: hadoop-datanode
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hadoop-datanode
+  template:
+    metadata:
+      labels:
+        app: hadoop-datanode
+    spec:
+      containers:
+      - name: hadoop-datanode
+        image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+        env:
+        - name: SERVICE_PRECONDITION
+          value: "34.95.12.127:9870"
+        - name: CLUSTER_NAME
+          value: "test"
+        - name: CORE_CONF_fs_defaultFS
+          value: "hdfs://34.95.12.127:9000"
+        - name: CORE_CONF_hadoop_http_staticuser_user
+          value: "root"
+        - name: CORE_CONF_hadoop_http_staticuser_user
+          value: "root"
+        - name: CORE_CONF_hadoop_proxyuser_hue_hosts
+          value: "*"
+        - name: CORE_CONF_hadoop_proxyuser_hue_groups
+          value: "*"
+        - name: CORE_CONF_io_compression_codecs
+          value: "org.apache.hadoop.io.compress.SnappyCodec"
+        - name: HDFS_CONF_dfs_webhdfs_enabled
+          value: "true"
+        - name: HDFS_CONF_dfs_permissions_enabled
+          value: "false"
+        - name: HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check
+          value: "false"
