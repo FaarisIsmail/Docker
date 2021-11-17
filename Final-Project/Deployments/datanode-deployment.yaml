@@ -19,11 +19,11 @@ spec:
         image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
         env:
         - name: SERVICE_PRECONDITION
-          value: "34.95.12.127:9870"
+          value: "${NAMENODE EXTERNAL IP}:9870"
         - name: CLUSTER_NAME
           value: "test"
         - name: CORE_CONF_fs_defaultFS
-          value: "hdfs://34.95.12.127:9000"
+          value: "hdfs://${NAMENODE EXTERNAL IP}:9000"
         - name: CORE_CONF_hadoop_http_staticuser_user
           value: "root"
         - name: CORE_CONF_hadoop_http_staticuser_user

@@ -18,4 +18,4 @@ spec:
       - name: sonar-scanner
         image: newtmitch/sonar-scanner
         command: ["sonar-scanner"]
-        args: ["-Dsonar.host.url=http://34.152.33.206:9000/", "-Dsonar.login=f9762e234f2cc21f81e5b6685b10d9b67e4428b0", "-Dsonar.projectName='Sonar Scanner'"]
+        args: ["-Dsonar.host.url=http://${SONARQUBE EXTERNAL IP}", "-Dsonar.login=${SONARQUBE TOKEN}", "-Dsonar.projectName='Sonar Scanner'"]
