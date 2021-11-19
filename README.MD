@@ -84,10 +84,10 @@ If the user does not have a Kubernetes Cluster created, follow these steps:
 2. Copy down the `hadoop-namenode-service` Endpoint IP (you will need this later) (NOTE: you do not need the PORT
 3. Now we need to edit the datanode-deployment.yaml file. Use a text editor or `datanode-deployment.yaml`
 4. Under `env:`, we need to edit two environment variable values
-   - `name: SERVICE_PRECONDITION
-          value: "${NAMENODE EXTERNAL IP}:9870"`
-   - `name: CORE_CONF_fs_defaultFS
-          value: "hdfs://${NAMENODE EXTERNAL IP}:9000"`
+   - `name: SERVICE_PRECONDITION`
+          `value: "${NAMENODE EXTERNAL IP}:9870"`
+   - `name: CORE_CONF_fs_defaultFS`
+          `value: "hdfs://${NAMENODE EXTERNAL IP}:9000"`
 5. Replace `${NAMENODE EXTERNAL IP}` with the Namenode endpoint IP you copied down earlier (Note, the `SERVICE PRECONDITION` has port `9870` while `CORE_CONF_fs_defaultFS` has port `9000` appended to the end of the IP
 6. Save the file
 7. Run the command `kubectl apply -f datanode-deployment.yaml`
