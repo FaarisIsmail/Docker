@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jupyter-pyspark-notebook
+  name: jupyter-notebook
   labels:
-    app: jupyter-pyspark-notebook
+    app: jupyter-notebook
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jupyter-pyspark-notebook
+      app: jupyter-notebook
   template:
     metadata:
       labels:
-        app: jupyter-pyspark-notebook
+        app: jupyter-notebook
     spec:
       containers:
-      - name: pyspark-notebook
-        image: jupyter/pyspark-notebook:latest
+      - name: minimal-notebook
+        image: jupyter/minimal-notebook:latest
         ports:
         - containerPort: 8888
         command: ["start-notebook.sh"]
