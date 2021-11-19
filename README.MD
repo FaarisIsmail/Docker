@@ -59,8 +59,39 @@ If the user does not have a Kubernetes Cluster created, follow these steps:
 7. Next you want to Generate a token. Enter a token name (such as scanner) and click `Generate`
 8. Copy down the token (you will need this later)
 9. Now we need to edit the sonar-scanner-deployment.yaml file. Use a text editor or `nano sonar-scanner-deployment.yaml`
-10. At the bottom of the file, you will see `args: ["-Dsonar.host.url=http://${SONARQUBE EXTERNAL IP}", "-Dsonar.login=${SONARQUBE TOKEN}", "-Dsonar.projectName='Sonar Scanner'"]`
-11. Replace `${SONARQUBE EXTERNAL IP}` with the Sonarqube IP and Port, and `${SONARQUBE TOKEN}` with the Token you copied down earlier
+10. At the bottom of the file, you will see `args: ["-Dsonar.host.url=http://${SONARQUBE EXTERNAL IP AND PORT}", "-Dsonar.login=${SONARQUBE TOKEN}", "-Dsonar.projectName='Sonar Scanner'"]`
+11. Replace `${SONARQUBE EXTERNAL IP AND PORT}` with the Sonarqube IP and Port, and `${SONARQUBE TOKEN}` with the Token you copied down earlier
 12. Save the file
 13. Run the command `kubectl apply -f sonar-scanner-deployment.yaml`
 14. Once the deployment is running, navigate to your Sonarqube endpoint ip again. You should see a new project name "Sonar Scanner" in the projects tab with a completed run of the scan
+
+## Setting up Hadoop
+### Hadoop namenode
+1. Navigate to the `Deployments` folder in your Google Cloud Platform terminal containing the YAML files
+2. Run the command `kubectl apply -f namenode-deployment.yaml`
+3. Navigate to `Kubernetes Engine -> Workloads` in GCP
+4. Click on the `hadoop-namenode` workload
+5. At the top, there will be a message to `Expose` the service. Click on it.
+6. Click on `Add Port Mapping` 
+7. Enter the following for two different ports:
+    * Port: 9870 Target_port: 9870 Protocol: TCP
+    * Port: 9000 Target_port: 9870 Protocol: TCP
+8. Use Service Type 'Load balancer' and Service Name 'hadoop-namenode-service'
+9. Click 'Expose' to expose the deployment
+10. Naviagte to `Kubernets Engine -> Services` in GCP to view exposed deployment endpoints
+### Hadoop datanodes
+1. Naviagte to `Kubernets Engine -> Services` in GCP to view exposed deployment endpoints
+2. Copy down the `hadoop-namenode-service` Endpoint IP (you will need this later) (NOTE: you do not need the PORT
+3. Now we need to edit the datanode-deployment.yaml file. Use a text editor or `datanode-deployment.yaml`
+4. Under `env:`, we need to edit two environment variable values
+   * - name: SERVICE_PRECONDITION
+          value: "${NAMENODE EXTERNAL IP}:9870"
+   * - name: CORE_CONF_fs_defaultFS
+          value: "hdfs://${NAMENODE EXTERNAL IP}:9000"
+5. Replace `${NAMENODE EXTERNAL IP}` with the Namenode endpoint IP you copied down earlier (Note, the `SERVICE PRECONDITION` has port `9870` while `CORE_CONF_fs_defaultFS` has port `9000` appended to the end of the IP
+6. Save the file
+7. Run the command `kubectl apply -f datanode-deployment.yaml`
+8. Navigate to the hadoop-namenode-service endpoint IP. Click on 'Datanodes' at the top
+9. You should see two datanodes in operation
+
+## Setting up the GUI
