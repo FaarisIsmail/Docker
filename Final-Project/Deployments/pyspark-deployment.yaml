@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pysparak-notebook
+  name: pyspark-notebook
   labels:
     app: pyspark-notebook
 spec:
