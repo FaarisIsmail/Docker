@@ -1,5 +1,5 @@
 # DEMO
-[Demo](https://pitt-my.sharepoint.com/:v:/g/personal/fki1_pitt_edu/EY4LsbT7eetOlKq0fl00TkYBNk86ucTkffFi_c5729zd_w?e=ZdFtRt)
+* [Demo](https://pitt-my.sharepoint.com/:v:/g/personal/fki1_pitt_edu/EY4LsbT7eetOlKq0fl00TkYBNk86ucTkffFi_c5729zd_w?e=ZdFtRt)
 
 # Docker Images
 * [Jupyter Notebook](https://hub.docker.com/r/jupyter/minimal-notebook)
