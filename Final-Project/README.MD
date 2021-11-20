@@ -1,5 +1,5 @@
 # DEMO
-[Demo](Link)
+[Demo](https://pitt-my.sharepoint.com/:v:/g/personal/fki1_pitt_edu/EY4LsbT7eetOlKq0fl00TkYBNk86ucTkffFi_c5729zd_w?e=ZdFtRt)
 
 # Docker Images
 * [Jupyter Notebook](https://hub.docker.com/r/jupyter/minimal-notebook)
@@ -8,7 +8,7 @@
 * [Sonar Scanner](https://hub.docker.com/r/newtmitch/sonar-scanner)
 * [Hadoop Namenode](https://hub.docker.com/layers/bde2020/hadoop-namenode/2.0.0-hadoop3.2.1-java8/images/sha256-51ad9293ec52083c5003ef0aaab00c3dd7d6335ddf495cc1257f97a272cab4c0?context=explore)
 * [Hadoop Datanode](https://hub.docker.com/layers/bde2020/hadoop-datanode/2.0.0-hadoop3.2.1-java8/images/sha256-ddf6e9ad55af4f73d2ccb6da31d9e3331ffb94d5f046126db4f40aa348d484bf?context=explore)
-* [GUI](Link)
+* [GUI](https://hub.docker.com/repository/docker/faarisismail/gui)
 
 # How to set up application
 For simplicity in delploying the microservices to Kubernetes, I have created custom YAML files located the [Deployments](./Deployments) folder. Please download these files onto Google Cloud Platform.
