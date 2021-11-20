@@ -91,7 +91,29 @@ If the user does not have a Kubernetes Cluster created, follow these steps:
 5. Replace `${NAMENODE EXTERNAL IP}` with the Namenode endpoint IP you copied down earlier (Note, the `SERVICE PRECONDITION` has port `9870` while `CORE_CONF_fs_defaultFS` has port `9000` appended to the end of the IP
 6. Save the file
 7. Run the command `kubectl apply -f datanode-deployment.yaml`
-8. Navigate to the hadoop-namenode-service endpoint IP. Click on 'Datanodes' at the top
+8. Navigate to the hadoop-namenode-service endpoint IP by entering it in your browser URL. Click on 'Datanodes' at the top
 9. You should see two datanodes in operation
 
 ## Setting up the GUI
+1. Naviagte to `Kubernets Engine -> Services` in GCP to view exposed deployment endpoints
+2. Copy down the endpoint IPS and Ports for all services (you do not need the hadoop-namenode-service ending in 9000, only the one ending in 9870)
+3. Navigate to the [GUI](./GUI) folder in GCP
+4. Edit the `index.html` file using a text editor or `nano index.html`
+5. Replace the following with the corresponding service IP:PORT URL 
+   * `${JUPYTER NOTEBOOK EXTERNAL IP}`
+   * `${SPARK NOTEBOOK EXTERNAL IP}`
+   * `${SONARQUBE EXTERNAL IP}`
+   * `${HADOOP EXTERNAL IP}`
+6. Save the file
+7. Run `docker build -t {USERNAME}/GUI .`
+8. Run `docker tag {USERNAME}/GUI gcr.io/{PROJECT_ID}/{USERNAME}/GUI
+9. Run `docker push` gcr.io/{PROJECT_ID}/{USERNAME}/GUI
+10. Navigate to `Container Registry` in GCP
+11. Navigate to the GUI image path and click on the image
+12. On `Image Details` on the top, click `Deploy` then `Deploy to GKE`
+13. Click `Continue` on the bottom
+14. Name the application `gui`
+15. Click `Deploy` on the bottom
+16. Run the command `kubectl expose deployment gui --port=8080 --protocol=TCP --target-port=80 --type=LoadBalancer --name=gui-service`
+17. Naviagte to `Kubernets Engine -> Services` in GCP to view exposed deployment endpoints
+18. Click on the endpoint IP and URL or paste it into your browser to start the GUI
