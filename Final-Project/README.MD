@@ -18,7 +18,7 @@ The following assumptions are made in order to successfully get the applications
 
 * A working Google Cloud Platform account with availible credits.
 * Your Google Cloud Platform has Docker and Kubernets API enabled, as well as Kubernetes Engine
-* The YAML files located in the [Deployments](.Deployments) folder are downloaded to Google Cloud Platform (You can use `git clone` on this repository within GCP)
+* The YAML files located in the [Deployments](./Deployments) folder are downloaded to Google Cloud Platform (You can use `git clone` on this repository within GCP)
 * A running Kubernetes Cluster.
 
 If the user does not have a Kubernetes Cluster created, follow these steps:
