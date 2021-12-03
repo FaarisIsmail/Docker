@@ -1,10 +1,10 @@
-#Deliverables
-##Screenshot of Cloud Account
+# Deliverables
+## Screenshot of Cloud Account
 [GCP](sc2.png)
-##Source Code
+## Source Code
 [WordCount.java](./WordCount.java)
 [Data](./Data)
-##Screenshot of execution
+## Screenshot of execution
 [Exec](sc1.png)
-##Copy of Output
+## Copy of Output
 [Results](collectedResults.txt)
