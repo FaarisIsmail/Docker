@@ -7,4 +7,4 @@
 ## Screenshot of execution
 ![Exec](sc1.png)
 ## Copy of Output
-[Results](collectedResults.txt)
+[Results](collectedResults)
